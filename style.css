@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(222,255,191);
+}
+
+section{
+ background: rgb(255,255,255);
+ padding: 15px;
+ width: 600px;
+ border-radius: 10px;
+ margin:auto;
+ box-shadow: 5px 5px 10px black;
+}
+
+input{
+    padding: 5px;
+    border-radius: 45px;
+    font-size: 15px;
+    margin-left: 15px;
+    width: 150pt;
+}
+input#rastreio{
+    margin-top: 20px;
+
+}
+div#controles{
+    margin-top: 15px;
+    padding: 10px;
+}
+input#etiqueta-geral{
+    width: 25rem;
+}
+
+select{
+    width: 290px;
+   
+   overflow: visible;
+     
+}
+
+div#container{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+div#resultados{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+    font-size: 35px;
+    font-family: Arial;
+
+}

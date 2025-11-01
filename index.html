@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Verificador</title>
+</head>
+<body>
+    <section>
+        <form>
+            <label>Etiqueta geral</label>
+            <input type="text" id="etiqueta-geral" onkeydown="ler(event,'volume')">
+            <div id="labels">
+                <label id="volu">Volume</label>
+                <input type="text"  id="volume" onkeydown="onEnter(event, 'rastreio')">
+
+                <label id="rast">Rastrio</label>
+                <input type="text" id="rastreio"  onkeydown="onEnter(event, 'volume')">
+            </div>
+
+            <div id="controles">
+                    <input type="button" id="Verificar" value="Veriicar" onclick="verificar()">
+                    <input type="button" id="remover" value="Remover">
+            </div>    
+
+            
+        </form>
+
+        <div id="selects">
+                <select name="" id="select-volumes" size="15"></select>
+                <select name="" id="select-rastreios" size="15"></select> 
+               
+        </div>
+        <div id="container">
+            <div>Total</div>
+            <div id="qtd">0</div>
+        </div>
+    </section>
+    <div id="resultados"> Aprovado </div>
+
+</body>
+</html>
