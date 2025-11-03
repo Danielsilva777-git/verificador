@@ -1,3 +1,9 @@
+      // Declarações das varáveis  seletoras do Dom
+           const select_volume = document.getElementById("select-volumes");
+           const select_rastreio = document.getElementById("select-rastreios");
+           const input_volume = document.getElementById("volume");
+           const input_rastreio = document.getElementById("rastreio");
+            let qdt = document.getElementById("qtd");
 
 
 function ler(event,next){
@@ -45,13 +51,7 @@ function ler(event,next){
           }
 
            event.preventDefault();
-          // Declarações das varáveis  seletoras do Dom
-           const select_volume = document.getElementById("select-volumes");
-           const select_rastreio = document.getElementById("select-rastreios");
-           const input_volume = document.getElementById("volume");
-           const input_rastreio = document.getElementById("rastreio");
-           var qdt = document.getElementById("qtd");
-
+        
            if(nextinput ==="rastreio"){
              if(input_volume.value.trim() ===""){
                alert("Preencha o campo volume")
@@ -71,11 +71,14 @@ function ler(event,next){
                 if(nextid){
                   nextid.focus()
                 }
-                qdt = select_volume.options.length;
+                qdt.innerText = select_volume.options.length;
 
              }
           
         
         }     
 
-        
+        function verificar(){
+          const input_volume = document.getElementById("volume");
+          alert(input_volume.value)
+        }
