@@ -37,7 +37,7 @@ function ler(event,next){
           }
 
 
-        }
+        } // fim da função ler
 
         function onEnter(event,nextinput){
           if(event.key !=="Enter"){
@@ -50,7 +50,7 @@ function ler(event,next){
            const select_rastreio = document.getElementById("select-rastreios");
            const input_volume = document.getElementById("volume");
            const input_rastreio = document.getElementById("rastreio");
-           const qdt = document.getElementById("qtd");
+           var qdt = document.getElementById("qtd");
 
            if(nextinput ==="rastreio"){
              if(input_volume.value.trim() ===""){
@@ -71,7 +71,10 @@ function ler(event,next){
                 if(nextid){
                   nextid.focus()
                 }
+                qdt = select_volume.options.length;
+
              }
+          
         
         }     
 
