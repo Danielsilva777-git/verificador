@@ -51,7 +51,9 @@ function ler(event,next){
           }
 
            event.preventDefault();
-        
+           // nextid a variável que armazena o próximo input 
+           const nextid = document.getElementById(nextinput)
+
            if(nextinput ==="rastreio"){
              if(input_volume.value.trim() ===""){
                alert("Preencha o campo volume")
@@ -61,19 +63,32 @@ function ler(event,next){
                  const numero = select_volume.options.length + 1;
                  const texto = `${numero} - ${input_volume.value}`;
 
-                // Adicionando valores do inputs nos selects 
+                // Adicionando valores do input volume  no select_volume 
                let option = new Option(texto, texto);
                select_volume.appendChild(option);
                input_volume.value = "";
-               
-               qdt.innerText = select_volume.options.length;  
-                const nextid = document.getElementById(nextinput);
+                
+                
                 if(nextid){
                   nextid.focus()
                 }
                 qdt.innerText = select_volume.options.length;
 
-             }
+             }if(nextinput ==="volume"){
+                 if(input_rastreio.value.trim() ===""){
+                   alert("Preencha o campo rastreio")
+                   return;
+                 }
+
+                 let option2 = new Option(input_rastreio.value, input_rastreio.value);
+                 select_rastreio.appendChild(option2);
+                 input_rastreio.value ="";
+
+               if(nextid){
+                  nextid.focus();
+               }
+             } 
+
           
         
         }     
