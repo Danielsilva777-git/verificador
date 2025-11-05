@@ -94,6 +94,5 @@ function ler(event,next){
         }     
 
         function verificar(){
-          const input_volume = document.getElementById("volume");
-          alert(input_volume.value)
+        
         }
