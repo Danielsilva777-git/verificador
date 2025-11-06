@@ -3,8 +3,12 @@
            const select_rastreio = document.getElementById("select-rastreios");
            const input_volume = document.getElementById("volume");
            const input_rastreio = document.getElementById("rastreio");
+           const result = document.getElementById("resultados");
+           const etiq_geral = document.getElementById("etiqueta-geral");
             let qdt = document.getElementById("qtd");
-
+function teste(){
+  alert("Aprovado")
+}
  
 function ler(event,next){
   // Se a minha tecla pressionada não for "Enter", ele não executará nada
@@ -92,7 +96,24 @@ function ler(event,next){
             
          }
         function verifica(){
-          alert()
+           let aprovado = true;
+
+          for(let i = 0; i < select_volume.options.length; i++){
+            const option = select_volume.options[i];
+            const partes = option.value.split(" ");
+           if(etiq_geral.value !== partes[2]){
+            option.style.color = "red";
+            
+            aprovado = false;
+           }else{
+            option.style.color = "";
+              teste();
+           }
+
+          }
+          
+          result.innerText = aprovado ? "Aprovado" : "Reprovado";
+          result.style.color = aprovado ? "blue" : "red";
         }
         
       function remove(){
