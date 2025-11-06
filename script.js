@@ -92,9 +92,12 @@ function ler(event,next){
             
          }
         function verifica(){
-          alert("ok")
+          alert()
         }
         
+      function remove(){
+        alert("ok")
 
+      }
        
          
