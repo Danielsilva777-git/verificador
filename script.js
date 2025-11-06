@@ -5,7 +5,7 @@
            const input_rastreio = document.getElementById("rastreio");
             let qdt = document.getElementById("qtd");
 
-
+ 
 function ler(event,next){
   // Se a minha tecla pressionada não for "Enter", ele não executará nada
   
@@ -89,10 +89,12 @@ function ler(event,next){
                }
              } 
 
-          
-        
-        }     
-
-        function verificar(){
-        
+            
+         }
+        function verifica(){
+          alert("ok")
         }
+        
+
+       
+         
