@@ -1,5 +1,5 @@
 
-
+ 
 function ler(event,next){
   // Se a minha tecla pressionada não for "Enter", ele não executará nada
   
@@ -34,6 +34,7 @@ function ler(event,next){
           const inputnext = document.getElementById(next);
           if(inputnext){
             inputnext.focus();
+          
           }
 
 
@@ -61,21 +62,41 @@ function ler(event,next){
                  const numero = select_volume.options.length + 1;
                  const texto = `${numero} - ${input_volume.value}`;
 
-                // Adicionando valores do inputs nos selects 
+                // Adicionando valores do input volume  no select_volume 
                let option = new Option(texto, texto);
                select_volume.appendChild(option);
                input_volume.value = "";
-               
-               qdt.innerText = select_volume.options.length;  
-                const nextid = document.getElementById(nextinput);
+                
+                
                 if(nextid){
                   nextid.focus()
                 }
                 qdt = select_volume.options.length;
 
-             }
-          
-        
-        }     
+             }if(nextinput ==="volume"){
+                 if(input_rastreio.value.trim() ===""){
+                   alert("Preencha o campo rastreio")
+                   return;
+                 }
 
+                 let option2 = new Option(input_rastreio.value, input_rastreio.value);
+                 select_rastreio.appendChild(option2);
+                 input_rastreio.value ="";
+
+               if(nextid){
+                  nextid.focus();
+               }
+             } 
+
+            
+         }
+        function verifica(){
+          alert()
+        }
         
+      function remove(){
+        alert("ok")
+
+      }
+       
+    
