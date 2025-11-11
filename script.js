@@ -6,9 +6,7 @@
            const result = document.getElementById("resultados");
            const etiq_geral = document.getElementById("etiqueta-geral");
             let qdt = document.getElementById("qtd");
-function teste(){
-  alert("Aprovado")
-}
+
  
 function ler(event,next){
   // Se a minha tecla pressionada não for "Enter", ele não executará nada
@@ -101,13 +99,16 @@ function ler(event,next){
           for(let i = 0; i < select_volume.options.length; i++){
             const option = select_volume.options[i];
             const partes = option.value.split(" ");
-           if(etiq_geral.value !== partes[2]){
+            const  option_rastreio = select_rastreio.options[i];
+          
+           if(etiq_geral.value !== partes[2] || partes[2] !== option_rastreio.value){
             option.style.color = "red";
+            option_rastreio.style.color = "red";
             
             aprovado = false;
            }else{
             option.style.color = "";
-              teste();
+              
            }
 
           }
@@ -121,4 +122,9 @@ function ler(event,next){
 
       }
        
-         
+         function teste(){
+     for(let i = 0; i < select_rastreio.options.length; i++){
+          
+     }
+     return ;
+}
