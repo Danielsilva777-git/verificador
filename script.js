@@ -108,23 +108,32 @@ function ler(event,next){
             aprovado = false;
            }else{
             option.style.color = "";
-              
+            option_rastreio.style.color = "";
+            
            }
 
           }
           
           result.innerText = aprovado ? "Aprovado" : "Reprovado";
           result.style.color = aprovado ? "blue" : "red";
+          
+        
+
+
         }
         
       function remove(){
-        alert("ok")
+      
+      if(select_volume.selectedIndex === -1){
+                alert("Selecione o volume á ser removido")
+                return;
+      }
+
+        const seleção_volumes = select_volume.selectedIndex;
+      
+       select_volume.remove(select_volume.selectedIndex)
+       select_rastreio.remove(seleção_volumes);
+             
+       qdt.innerText = select_volume.options.length;  
 
       }
-       
-         function teste(){
-     for(let i = 0; i < select_rastreio.options.length; i++){
-          
-     }
-     return ;
-}
