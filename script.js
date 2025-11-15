@@ -3,6 +3,8 @@
            const select_rastreio = document.getElementById("select-rastreios");
            const input_volume = document.getElementById("volume");
            const input_rastreio = document.getElementById("rastreio");
+           const result = document.getElementById("resultados");
+           const etiq_geral = document.getElementById("etiqueta-geral");
             let qdt = document.getElementById("qtd");
 
  
@@ -92,12 +94,46 @@ function ler(event,next){
             
          }
         function verifica(){
-          alert()
+           let aprovado = true;
+
+          for(let i = 0; i < select_volume.options.length; i++){
+            const option = select_volume.options[i];
+            const partes = option.value.split(" ");
+            const  option_rastreio = select_rastreio.options[i];
+          
+           if(etiq_geral.value !== partes[2] || partes[2] !== option_rastreio.value){
+            option.style.color = "red";
+            option_rastreio.style.color = "red";
+            
+            aprovado = false;
+           }else{
+            option.style.color = "";
+            option_rastreio.style.color = "";
+            
+           }
+
+          }
+          
+          result.innerText = aprovado ? "Aprovado" : "Reprovado";
+          result.style.color = aprovado ? "blue" : "red";
+          
+        
+
+
         }
         
       function remove(){
-        alert("ok")
+      
+      if(select_volume.selectedIndex === -1){
+                alert("Selecione o volume á ser removido")
+                return;
+      }
+
+        const seleção_volumes = select_volume.selectedIndex;
+      
+       select_volume.remove(select_volume.selectedIndex)
+       select_rastreio.remove(seleção_volumes);
+             
+       qdt.innerText = select_volume.options.length;  
 
       }
-       
-         
