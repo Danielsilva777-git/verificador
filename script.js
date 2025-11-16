@@ -101,7 +101,7 @@ function ler(event,next){
             const partes = option.value.split(" ");
             const  option_rastreio = select_rastreio.options[i];
           
-           if(etiq_geral.value !== partes[2] || partes[2] !== option_rastreio.value){
+           if(etiq_geral.value !== partes[2] || partes[4] !== option_rastreio.value){
             option.style.color = "red";
             option_rastreio.style.color = "red";
             
@@ -111,7 +111,7 @@ function ler(event,next){
             option_rastreio.style.color = "";
               alert("Aprovado")
            }
-
+          
           }
           
           result.innerText = aprovado ? "Aprovado" : "Reprovado";
