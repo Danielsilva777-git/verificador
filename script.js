@@ -109,15 +109,16 @@ function ler(event,next){
            }else{
             option.style.color = "";
             option_rastreio.style.color = "";
-              alert("Aprovado")
+              
            }
           
           }
+            
           
           result.innerText = aprovado ? "Aprovado" : "Reprovado";
           result.style.color = aprovado ? "blue" : "red";
           
-        
+            aprovado ? duplicidade() : ""
 
 
         }
@@ -135,5 +136,20 @@ function ler(event,next){
        select_rastreio.remove(seleção_volumes);
              
        qdt.innerText = select_volume.options.length;  
+
+      }
+
+
+      function duplicidade(){
+           const visto = new Set();
+
+           for(const valor of select_rastreio){
+             if(visto.has(valor.value)){
+                result.innerText = `A caixa com o rastreio de número ${valor.value} já consta na listagem`;
+                 result.style.color= "red";
+              }
+
+               visto.add(valor.value);
+           }       
 
       }
