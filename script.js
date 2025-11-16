@@ -109,7 +109,7 @@ function ler(event,next){
            }else{
             option.style.color = "";
             option_rastreio.style.color = "";
-            
+              alert("Aprovado")
            }
 
           }
