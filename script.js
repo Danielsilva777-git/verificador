@@ -126,7 +126,7 @@ function ler(event,next){
       function remove(){
       
       if(select_volume.selectedIndex === -1){
-                alert("Selecione o volume á ser removido")
+                alert("Selecione apenas o volume a sua esquerda para ambos serem removidos")
                 return;
       }
 
@@ -141,15 +141,33 @@ function ler(event,next){
 
 
       function duplicidade(){
-           const visto = new Set();
+           
+        const contador = {}; // quardar quantas vezes cada valor aparece
 
-           for(const valor of select_rastreio){
-             if(visto.has(valor.value)){
-                result.innerText = `A caixa com o rastreio de número ${valor.value} já consta na listagem`;
-                 result.style.color= "red";
-              }
+        //Primeiro passo, contar quantas vezes os rastreios aparece
+        for(const rastreios of select_rastreio.options){
 
-               visto.add(valor.value);
-           }       
+          const valor = rastreios.value;
+          
+          contador[valor] = (contador[valor] || 0) + 1;
+        }
+            let repetido = false;
+
+        // marcar todos os rastreios repetidos 
+
+        for(const rastreios of select_rastreio.options){
+          if(contador[rastreios.value] > 1){
+            rastreios.style.color= "red";
+            repetido = true;
+          }else{
+            rastreios.style.color= "Black"
+          }
+
+        }
+        if(repetido){
+          result.innerText= "Existem rastreios repitidos na listagem";
+          result.style.color= "red";
+        }
+           
 
       }
