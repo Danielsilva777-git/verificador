@@ -177,7 +177,7 @@ function ler(event,next){
 
         }
         if(repetido){
-          result.innerText= "Existem rastreios repitidos na listagem";
+          result.innerText= "Existem rastreios repetidos na listagem";
           result.style.color= "red";
         }
            
