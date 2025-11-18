@@ -47,6 +47,17 @@ function ler(event,next){
 
         } // fim da função ler
 
+        function renumerarSelect(select) {
+    for (let i = 0; i < select.options.length; i++) {
+
+        // Pega apenas o texto original da opção após o "-"
+        const textoOriginal = select.options[i].text.split(" - ")[1];
+
+        // Reescreve a opção com o número correto
+        select.options[i].text = `${i + 1} - ${textoOriginal}`;
+    }
+}
+
         function onEnter(event,nextinput){
           if(event.key !=="Enter"){
             return; 
@@ -69,6 +80,7 @@ function ler(event,next){
                let option = new Option(texto, texto);
                select_volume.appendChild(option);
                input_volume.value = "";
+                renumerarSelect(select_volume)
                 
                 
                 if(nextid){
@@ -134,7 +146,7 @@ function ler(event,next){
       
        select_volume.remove(select_volume.selectedIndex)
        select_rastreio.remove(seleção_volumes);
-             
+            renumerarSelect(select_volume)
        qdt.innerText = select_volume.options.length;  
 
       }
